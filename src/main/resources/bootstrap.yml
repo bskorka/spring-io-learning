@@ -3,5 +3,11 @@ spring:
     name: reservationservice
   cloud:
     config:
-      uri: http://localhost:8889
-      label: master
+      discovery:
+        enabled: true
+        serviceId: CONFIGSERVER
+
+eureka:
+  client:
+    serviceUrl:
+      defaultZone: http://localhost:8765/eureka
